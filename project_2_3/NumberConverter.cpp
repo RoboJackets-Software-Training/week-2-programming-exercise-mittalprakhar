@@ -115,10 +115,17 @@ std::string NumberConverter::decimalToBinary(int input) {
 }
 
 std::string NumberConverter::hexToBinary(std::string input) {
-  int decimal = hexToDecimal(input);
-  std::string output = decimalToBinary(decimal);
-  decimal_outputs--;
-  decimal_inputs--;
+  std::string output = "";
+  for (char c: input) {
+    int decimal = hexCharToNumber(c);
+    std::string binary = decimalToBinary(decimal);
+    if (binary.length() == 1) { binary = "0" + binary; }
+    if (binary.length() == 2) { binary = "0" + binary; }
+    if (binary.length() == 3) { binary = "0" + binary; }
+    output += binary;
+    decimal_inputs--;
+    binary_outputs--;
+  }
   return output;
 }
 
