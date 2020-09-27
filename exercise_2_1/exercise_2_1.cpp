@@ -21,8 +21,13 @@ int main() {
   	std::cin >> s;
   	w = readInVector(s);
 
+  	std::cout << "x: ";
+  	printVector(x);
+
+  	std::cout << "w: ";
+  	printVector(w);
+
   	printVector(applyConvolution(x, w, pack_with_zeros));
- 	printVector(applyConvolution(x, w, not pack_with_zeros));
 
   	return 0;
 }
