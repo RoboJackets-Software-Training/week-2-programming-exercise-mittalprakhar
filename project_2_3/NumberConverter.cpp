@@ -126,6 +126,8 @@ std::string NumberConverter::hexToBinary(std::string input) {
     decimal_inputs--;
     binary_outputs--;
   }
+  hex_inputs++;
+  binary_outputs++;
   return output;
 }
 
